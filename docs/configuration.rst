@@ -106,6 +106,26 @@ example
    You can find the short name for the claims you configure in the ADFS management console underneath
    **ADFS** ➜ **Service** ➜ **Claim Descriptions**
 
+.. _static_attribute_setting:
+
+STATIC_ATTRIBUTES
+-----------------
+Default: ``None``
+
+A dictionary of field values that is used to set attributes on the user account in Django.
+
+The **key** represents user model field (e.g. ``first_name``)
+and the **value** represents the value (e.g. ``True``).
+
+example
+
+.. code-block:: python
+
+    AUTH_ADFS = {
+        "STATIC_ATTRIBUTES": {"is_staff": True,
+                               "is_superuser": True},
+    }
+
 .. _client_id_setting:
 
 CLIENT_ID
