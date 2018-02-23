@@ -21,6 +21,7 @@ class Settings(object):
         self.GROUP_CLAIM = "group"
         self.CLAIM_MAPPING = {}
         self.BOOLEAN_CLAIM_MAPPING = {}
+        self.STATIC_ATTRIBUTES = {}
         self.LOGIN_EXEMPT_URLS = []
 
         required_settings = [

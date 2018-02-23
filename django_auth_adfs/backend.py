@@ -245,6 +245,10 @@ class AdfsBackend(ModelBackend):
                 msg = "User model has no field named '{0}'. Check ADFS claims mapping."
                 raise ImproperlyConfigured(msg.format(field))
 
+        for field, value in settings.STATIC_ATTRIBUTES.items():
+            if hasattr(user, field):
+                setattr(user, field, value)
+
     def update_user_groups(self, user, payload):
         """
         Updates user group memberships based on the GROUP_CLAIM setting.
